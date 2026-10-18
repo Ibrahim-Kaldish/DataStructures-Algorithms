@@ -1,0 +1,6 @@
+Input (N),Iterative Time (s),Recursive Time (s),Theoretical Ratio/Trend Observed
+10,1.66,0.0001472,baseline
+20,2.05,0.000812,"Iter: 1.23x / Rec: 5.51x -- Recursive grows much faster than iterative, as expected, but still below theoretical ratio (phi^10 ~ 123x); timer overhead likely dominant at this scale"
+30,2.196,0.008454,Iter: 1.07x / Rec: 10.41x -- Recursive accelerating; still below theoretical exponential ratio
+40,2.89,0.9434775,Iter: 1.32x / Rec: 111.6x -- Recursive ratio now close to theoretical phi^10 ~ 123x; exponential growth clearly dominating
+45,2.93,11.056,Iter: 1.01x / Rec: 11.72x (over +5 N) -- Matches theoretical phi^5 ~ 11.09x almost exactly; strong confirmation of O(2^N)

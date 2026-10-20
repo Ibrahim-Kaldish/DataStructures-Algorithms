@@ -27,10 +27,10 @@ public class PriorityQueue<T extends Comparable<T>> {
         return isEmpty() ? null : heap[0];
     }
 
-    public void swap(T[] arr, int i, int j){
-        T temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+    public void swap(int i, int j){
+        T temp = heap[i];
+        heap[i] = heap[j];
+        heap[j] = temp;
     }
 
     public void add(T x){
@@ -41,7 +41,7 @@ public class PriorityQueue<T extends Comparable<T>> {
         int i = size++;
 
         while (i > 0 && heap[i].compareTo(heap[(i - 1) / 2]) > 0){
-            swap(heap, i, (i - 1) / 2);
+            swap(i, (i - 1) / 2);
             i = (i - 1) / 2;
         }
     }
@@ -65,7 +65,7 @@ public class PriorityQueue<T extends Comparable<T>> {
         if (r < n && arr[r].compareTo(arr[mx]) > 0) mx = r;
 
         if (root != mx){
-            swap(arr, root, mx);
+            swap(root, mx);
             heapify(arr, n, mx);
         }
     }

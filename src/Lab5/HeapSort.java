@@ -17,7 +17,6 @@ public class HeapSort <T extends Comparable<T>>{
         arr[j] = temp;
     }
 
-
     public void heapify(T[] arr, int n, int root){
         int l = 2 * root + 1 ;
         int r = 2 * root + 2 ;

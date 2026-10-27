@@ -60,18 +60,24 @@ void main() {
         bst.insert(el);
 
 
-    Integer x = bst.delete(2);
-    System.out.println(x);
+    System.out.println(bst.height());
 
-    bst.preorder();
-    System.out.println(" ");
+//    System.out.println(bst.countNodes());
+//    Integer x = bst.delete(2);
+//    System.out.println(bst.countNodes());
 
-    bst.inorder();
-    System.out.println(" ");
+//    System.out.println(bst.max());
+//    System.out.println(bst.min());
 
-    bst.postorder();
-
-
+//    System.out.println(x);
+//
+//    bst.preorder();
+//    System.out.println(" ");
+//
+//    bst.inorder();
+//    System.out.println(" ");
+//
+//    bst.postorder();
 
 
 }

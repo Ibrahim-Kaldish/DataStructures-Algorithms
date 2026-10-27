@@ -30,7 +30,6 @@ public class BST <T extends Comparable<T>>{
             }
         }
     }
-
     public void insert(T val){
         if (isEmpty()) {
             root = new Node<>(val);
@@ -52,7 +51,6 @@ public class BST <T extends Comparable<T>>{
         }
         return false;
     }
-
     public boolean search(T val){
         return searchInBST(val, root);
     }
@@ -69,7 +67,6 @@ public class BST <T extends Comparable<T>>{
         root = deleteFromBST(val, root);
         return val;
     }
-
     private Node<T> deleteFromBST(T val, Node<T> root){
         if (root != null){
             if (val.compareTo(root.val) < 0){
@@ -91,14 +88,38 @@ public class BST <T extends Comparable<T>>{
         return null;
     }
 
-    public void preorder(){
-        preorder(root);
+    public int countNodes(Node<T> root){
+        if (root == null) return 0;
+        return 1 + countNodes(root.left) + countNodes(root.right);
     }
-    public void inorder(){
-        inorder(root);
+    public int countNodes(){
+        return countNodes(root);
     }
-    public void postorder(){
-        postorder(root);
+
+    public int height(Node<T> root){
+        if (root == null ) return 0;
+        return 1 + Math.max (height(root.left), height(root.left));
+    }
+    public int height(){
+        return height(root);
+    }
+
+    public T max(Node<T> root){
+        if (isEmpty()) return null;
+        while (root.right != null) root = root.right;
+        return root.val;
+    }
+    public T max(){
+        return max(root);
+    }
+
+    public T min(Node<T> root){
+        if (isEmpty()) return null;
+        while (root.left != null) root = root.left;
+        return root.val;
+    }
+    public T min(){
+        return min(root);
     }
 
     private void preorder(Node<T> root){
@@ -108,6 +129,9 @@ public class BST <T extends Comparable<T>>{
             preorder(root.right);
         }
     }
+    public void preorder(){
+        preorder(root);
+    }
 
     private void inorder(Node<T> root){
         if (root != null){
@@ -116,6 +140,9 @@ public class BST <T extends Comparable<T>>{
             inorder(root.right);
         }
     }
+    public void inorder(){
+        inorder(root);
+    }
 
     private void postorder(Node<T> root){
         if (root != null){
@@ -123,5 +150,8 @@ public class BST <T extends Comparable<T>>{
             postorder(root.right);
             System.out.print(root.val + " ");
         }
+    }
+    public void postorder(){
+        postorder(root);
     }
 }

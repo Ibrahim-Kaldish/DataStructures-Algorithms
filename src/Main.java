@@ -1,8 +1,4 @@
-import Lab4.MergeSortSection;
-import Lab4.QuickSortSection;
-import Lab4.Student;
-import Lab5.HeapSort;
-import Lab5.PriorityQueue;
+import Lab8.Graph;
 import Lab6.BST;
 
 void main() {
@@ -78,4 +74,31 @@ void main() {
 //    System.out.println(" ");
 //
 //    bst.postorder();
+
+    Graph g = new Graph(6, false);
+    g.addEdge(0, 1);
+    g.addEdge(0, 2);
+    g.addEdge(1, 3);
+    g.addEdge(2, 4);
+    g.addEdge(3, 5);
+
+    System.out.println("Matrix:");
+    g.printMatrix();
+    System.out.println("List:");
+    g.printList();
+
+    System.out.println("DFS: " + g.dfs(0));
+    System.out.println("BFS: " + g.bfs(0));
+    System.out.println(g.hasEdge(1, 3));
+    System.out.println(g.hasEdge(1, 4));
+
+    Graph dg = new Graph(4, true);
+    dg.addEdge(0, 1);
+    dg.addEdge(1, 2);
+    dg.addEdge(2, 0);
+    dg.addEdge(2, 3);
+
+    System.out.println("DFS directed: " + dg.dfs(0));
+    System.out.println("BFS directed: " + dg.bfs(0));
+    System.out.println("BFS from 3: " + dg.bfs(3));
 }

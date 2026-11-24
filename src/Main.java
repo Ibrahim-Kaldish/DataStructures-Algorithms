@@ -49,14 +49,14 @@ void main() {
 //        System.out.print(el + " ");
 //    }
 
-    Integer[] arr = new Integer[] {5,2,3,4,1} ;
-    BST<Integer> bst = new BST<>();
-
-    for (Integer el: arr)
-        bst.insert(el);
-
-
-    System.out.println(bst.height());
+//    Integer[] arr = new Integer[] {5,2,3,4,1} ;
+//    BST<Integer> bst = new BST<>();
+//
+//    for (Integer el: arr)
+//        bst.insert(el);
+//
+//
+//    System.out.println(bst.height());
 
 //    System.out.println(bst.countNodes());
 //    Integer x = bst.delete(2);
